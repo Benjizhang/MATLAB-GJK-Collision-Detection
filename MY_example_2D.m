@@ -22,8 +22,8 @@ hold on
 
 % Make shape 1
 clear S1
-S1.Vertices = [2 4; 5 4; 5 6; 2 6];
-% S1.Vertices = [2 1 0; 6 1 0; 6 6 0; 2 6 0];
+% S1.Vertices = [2 4; 5 4; 5 6; 2 6];
+S1.Vertices = [2 1 0; 6 1 0; 6 6 0; 2 6 0];
 S1.Faces = [1 2 3 4];
 S1.FaceVertexCData = jet(size(S1.Vertices,1));
 S1.FaceColor = 'interp';
@@ -31,8 +31,8 @@ S1Obj = patch(S1);
 
 % Make shape 2
 clear S2
-S2.Vertices = [5 0; 5 2; 8 2; 8 0];
-% S2.Vertices = [5 0 0; 5 2 0; 8 2 0; 8 0 0];
+% S2.Vertices = [5 0; 5 2; 8 2; 8 0];
+S2.Vertices = [5 0 0; 5 2 0; 8 2 0; 8 0 0];
 S2.Faces = [1 2 3 4];
 S2.FaceVertexCData = jet(size(S2.Vertices,1));
 S2.FaceColor = 'interp';
@@ -42,7 +42,9 @@ S2Obj = patch(S2);
 % -- 3D --
 % % % collisionFlag = GJK(S1Obj,S2Obj,iterationsAllowed);
 % -- 2D --
-collisionFlag = GJK_optimal(S1Obj,S2Obj,iterationsAllowed);
+% collisionFlag = GJK_optimal(S1Obj,S2Obj,iterationsAllowed);
+% collisionFlag = GJK_2D(S1Obj,S2Obj,iterationsAllowed);
+
 
 hold off
 axis equal
@@ -99,7 +101,8 @@ for i = 3:-0.01:end_cond
     S2Obj.Vertices = ((S2Rot*S2Coords') + [4, -i, 0]'*ones(1,size(S2Coords,1)))';
     
     % Do collision detection
-    collisionFlag = GJK(S1Obj,S2Obj,iterationsAllowed);
+    % % % collisionFlag = GJK(S1Obj,S2Obj,iterationsAllowed);
+    collisionFlag = GJK_2D(S1Obj,S2Obj,iterationsAllowed);
     
     drawnow;
     
