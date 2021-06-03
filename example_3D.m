@@ -22,10 +22,10 @@ hold on
 
 % Make shape 1
 clear S1
-S1.Vertices = [2 4; 5 4; 5 6; 2 6];
-S1.Faces = [1 2 3 4];
-% % % S1.Vertices = [2 1 0; 6 1 0; 6 6 0; 2 6 0; 2 1 2; 6 1 2; 6 6 2; 2 6 2];
-% % % S1.Faces = [1 2 3 4; 1 2 6 5; 2 3 7 6; 3 4 8 7; 4 1 5 8; 5 6 7 8];
+% % % S1.Vertices = [2 4; 5 4; 5 6; 2 6];
+% % % S1.Faces = [1 2 3 4];
+S1.Vertices = [2 1 0; 6 1 0; 6 6 0; 2 6 0; 2 1 2; 6 1 2; 6 6 2; 2 6 2];
+S1.Faces = [1 2 3 4; 1 2 6 5; 2 3 7 6; 3 4 8 7; 4 1 5 8; 5 6 7 8];
 S1.FaceVertexCData = jet(size(S1.Vertices,1));
 S1.FaceColor = 'interp';
 S1Obj = patch(S1);
@@ -37,10 +37,10 @@ S1Obj = patch(S1);
 
 % Make shape 2
 clear S2
-S2.Vertices = [5 0; 5 2; 8 2; 8 0];
-S2.Faces = [1 2 3 4];
-% % % S2.Vertices = [5 0 0; 5 2 0; 8 2 0; 8 0 0; 5 0 2; 5 2 2; 8 2 2; 8 0 2];
-% % % S2.Faces = [1 2 3 4; 1 2 6 5; 2 3 7 6; 3 4 8 7; 4 1 5 8; 5 6 7 8];
+% % % S2.Vertices = [5 0; 5 2; 8 2; 8 0];
+% % % S2.Faces = [1 2 3 4];
+S2.Vertices = [5 0 0; 5 2 0; 8 2 0; 8 0 0; 5 0 2; 5 2 2; 8 2 2; 8 0 2];
+S2.Faces = [1 2 3 4; 1 2 6 5; 2 3 7 6; 3 4 8 7; 4 1 5 8; 5 6 7 8];
 S2.FaceVertexCData = jet(size(S2.Vertices,1));
 S2.FaceColor = 'interp';
 S2Obj = patch(S2);
